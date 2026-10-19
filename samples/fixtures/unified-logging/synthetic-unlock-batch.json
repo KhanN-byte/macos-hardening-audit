@@ -1,0 +1,122 @@
+[
+  {
+    "timestamp": "2026-01-15 09:30:00.000000-0600",
+    "eventMessage": "-[LWDefaultScreenLockUI authFailWithMessage:] | enter. INCORRECT password",
+    "processImagePath": "/System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow",
+    "subsystem": "com.apple.loginwindow.logging",
+    "category": "Standard",
+    "messageType": "Default"
+  },
+  {
+    "timestamp": "2026-01-15 09:30:00.000500-0600",
+    "eventMessage": "-[LWDefaultScreenLockUI authFailWithMessage:] |      setEnabled:YES",
+    "processImagePath": "/System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow",
+    "subsystem": "com.apple.loginwindow.logging",
+    "category": "Standard",
+    "messageType": "Default"
+  },
+  {
+    "timestamp": "2026-01-15 09:30:00.001000-0600",
+    "eventMessage": "-[LWDefaultScreenLockUI authFailWithMessage:] |      Set _windowControllerActionInProgress = NO",
+    "processImagePath": "/System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow",
+    "subsystem": "com.apple.loginwindow.logging",
+    "category": "Standard",
+    "messageType": "Default"
+  },
+  {
+    "timestamp": "2026-01-15 09:30:03.000000-0600",
+    "eventMessage": "-[LWDefaultScreenLockUI authFailWithMessage:] | enter. INCORRECT password",
+    "processImagePath": "/System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow",
+    "subsystem": "com.apple.loginwindow.logging",
+    "category": "Standard",
+    "messageType": "Default"
+  },
+  {
+    "timestamp": "2026-01-15 09:30:03.000500-0600",
+    "eventMessage": "-[LWDefaultScreenLockUI authFailWithMessage:] |      setEnabled:YES",
+    "processImagePath": "/System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow",
+    "subsystem": "com.apple.loginwindow.logging",
+    "category": "Standard",
+    "messageType": "Default"
+  },
+  {
+    "timestamp": "2026-01-15 09:30:03.001000-0600",
+    "eventMessage": "-[LWDefaultScreenLockUI authFailWithMessage:] |      Set _windowControllerActionInProgress = NO",
+    "processImagePath": "/System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow",
+    "subsystem": "com.apple.loginwindow.logging",
+    "category": "Standard",
+    "messageType": "Default"
+  },
+  {
+    "timestamp": "2026-01-15 09:30:06.000000-0600",
+    "eventMessage": "-[LWDefaultScreenLockUI authFailWithMessage:] | enter. INCORRECT password",
+    "processImagePath": "/System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow",
+    "subsystem": "com.apple.loginwindow.logging",
+    "category": "Standard",
+    "messageType": "Default"
+  },
+  {
+    "timestamp": "2026-01-15 09:30:06.000500-0600",
+    "eventMessage": "-[LWDefaultScreenLockUI authFailWithMessage:] |      setEnabled:YES",
+    "processImagePath": "/System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow",
+    "subsystem": "com.apple.loginwindow.logging",
+    "category": "Standard",
+    "messageType": "Default"
+  },
+  {
+    "timestamp": "2026-01-15 09:30:06.001000-0600",
+    "eventMessage": "-[LWDefaultScreenLockUI authFailWithMessage:] |      Set _windowControllerActionInProgress = NO",
+    "processImagePath": "/System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow",
+    "subsystem": "com.apple.loginwindow.logging",
+    "category": "Standard",
+    "messageType": "Default"
+  },
+  {
+    "timestamp": "2026-01-15 09:30:09.000000-0600",
+    "eventMessage": "-[LWDefaultScreenLockUI authFailWithMessage:] | enter. INCORRECT password",
+    "processImagePath": "/System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow",
+    "subsystem": "com.apple.loginwindow.logging",
+    "category": "Standard",
+    "messageType": "Default"
+  },
+  {
+    "timestamp": "2026-01-15 09:30:09.000500-0600",
+    "eventMessage": "-[LWDefaultScreenLockUI authFailWithMessage:] |      setEnabled:YES",
+    "processImagePath": "/System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow",
+    "subsystem": "com.apple.loginwindow.logging",
+    "category": "Standard",
+    "messageType": "Default"
+  },
+  {
+    "timestamp": "2026-01-15 09:30:09.001000-0600",
+    "eventMessage": "-[LWDefaultScreenLockUI authFailWithMessage:] |      Set _windowControllerActionInProgress = NO",
+    "processImagePath": "/System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow",
+    "subsystem": "com.apple.loginwindow.logging",
+    "category": "Standard",
+    "messageType": "Default"
+  },
+  {
+    "timestamp": "2026-01-15 09:30:12.000000-0600",
+    "eventMessage": "-[LWDefaultScreenLockUI authFailWithMessage:] | enter. INCORRECT password",
+    "processImagePath": "/System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow",
+    "subsystem": "com.apple.loginwindow.logging",
+    "category": "Standard",
+    "messageType": "Default"
+  },
+  {
+    "timestamp": "2026-01-15 09:30:12.000500-0600",
+    "eventMessage": "-[LWDefaultScreenLockUI authFailWithMessage:] |      setEnabled:YES",
+    "processImagePath": "/System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow",
+    "subsystem": "com.apple.loginwindow.logging",
+    "category": "Standard",
+    "messageType": "Default"
+  },
+  {
+    "timestamp": "2026-01-15 09:30:12.001000-0600",
+    "eventMessage": "-[LWDefaultScreenLockUI authFailWithMessage:] |      Set _windowControllerActionInProgress = NO",
+    "processImagePath": "/System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow",
+    "subsystem": "com.apple.loginwindow.logging",
+    "category": "Standard",
+    "messageType": "Default"
+  }
+]

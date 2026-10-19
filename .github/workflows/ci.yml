@@ -1,0 +1,17 @@
+name: CI
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - run: dotnet restore macOS_Hardening.slnx
+      - run: dotnet build macOS_Hardening.slnx --no-restore --configuration Release
+      - run: dotnet test macOS_Hardening.slnx --no-build --configuration Release

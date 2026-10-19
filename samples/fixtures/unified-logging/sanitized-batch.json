@@ -1,0 +1,56 @@
+[
+  {
+    "timezoneName": "",
+    "messageType": "Default",
+    "eventType": "logEvent",
+    "source": null,
+    "formatString": "SANITIZED",
+    "userID": 42,
+    "activityIdentifier": 0,
+    "subsystem": "SANITIZED",
+    "category": "SANITIZED",
+    "threadID": 42,
+    "senderImageUUID": "00000000-0000-0000-0000-000000000000",
+    "backtrace": {
+      "frames": [
+        {
+          "imageOffset": 42,
+          "imageUUID": "00000000-0000-0000-0000-000000000000"
+        }
+      ]
+    },
+    "bootUUID": "00000000-0000-0000-0000-000000000000",
+    "processImagePath": "/synthetic/example",
+    "senderImagePath": "/synthetic/example",
+    "timestamp": "2026-01-15 09:30:00.123456-0600",
+    "machTimestamp": 42,
+    "eventMessage": "SANITIZED",
+    "processImageUUID": "00000000-0000-0000-0000-000000000000",
+    "traceID": 42,
+    "processID": 42,
+    "senderProgramCounter": 42,
+    "parentActivityIdentifier": 0
+  },
+  {
+    "timezoneName": "",
+    "eventType": "timesyncEvent",
+    "formatString": "",
+    "userID": 0,
+    "activityIdentifier": 0,
+    "subsystem": "",
+    "category": "",
+    "threadID": 0,
+    "senderImageUUID": "",
+    "bootUUID": "00000000-0000-0000-0000-000000000000",
+    "processImagePath": "",
+    "senderImagePath": "",
+    "timestamp": "2026-01-15 09:30:00.123456-0600",
+    "machTimestamp": 42,
+    "eventMessage": "SANITIZED",
+    "processImageUUID": "",
+    "traceID": 0,
+    "processID": 0,
+    "senderProgramCounter": 0,
+    "parentActivityIdentifier": 0
+  }
+]

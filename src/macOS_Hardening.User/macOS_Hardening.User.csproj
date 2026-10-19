@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../macOS_Hardening.Core/macOS_Hardening.Core.csproj" />
+    <ProjectReference Include="../macOS_Hardening.Infrastructure/macOS_Hardening.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/macOS_Hardening.User/macOS_Hardening.User.csproj" />
+    <Project Path="src/macOS_Hardening.Core/macOS_Hardening.Core.csproj" />
+    <Project Path="src/macOS_Hardening.Contracts/macOS_Hardening.Contracts.csproj" />
+    <Project Path="src/macOS_Hardening.Infrastructure/macOS_Hardening.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/macOS_Hardening.UnitTests/macOS_Hardening.UnitTests.csproj" />
+  </Folder>
+</Solution>
