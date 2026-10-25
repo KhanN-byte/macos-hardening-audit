@@ -9,14 +9,16 @@ One .NET Worker Service process hosted by `macOS_Hardening.User`, organized into
 | Contracts | Normalized security event contracts | None |
 | Infrastructure | Unified Logging collection, raw log models, parsing, persistence | Contracts |
 
-`Program.cs` registers `AuthenticationWorker`, which logs startup, waits for cancellation, and logs shutdown. `Infrastructure/UnifiedLogging/UnifiedLogEntry.cs` holds the existing raw Apple log record model with validated timestamps and nullable process IDs. The Infrastructure batch parser validates bounded JSON arrays and returns raw entries with safe diagnostics. No collector, detector, or persistence implementation exists yet. See [parser behavior](../testing/unified-log-parser.md). Empty responsibility folders are retained with `.gitkeep`; no speculative contracts or abstractions are introduced.
+`Program.cs` configures an opt-in `AuthenticationWorker`. Infrastructure owns a native process adapter, bounded collector with restart backoff, an incremental reader for the observed live JSON array framing, and local JSONL storage. The stream reader and batch parser share raw-record validation. The worker maps supported failures, suppresses replayed records, persists normalized events, and passes them to Core for repeated-failure detection.
 
-Intended future flow:
+Current flow:
 
-`macOS log CLI -> Infrastructure collector/parser -> Contracts events -> Core detection -> Infrastructure persistence`
+`macOS log stream -> bounded Infrastructure collector/parser -> failure mapper -> deduplicator -> JSONL persistence -> Core detector -> structured alert logging`
 
-User will compose and orchestrate these components. Core must not depend on platform collection or storage. Contracts must remain independent of raw Apple log schemas. Structured logging and observability will use the existing hosting facilities and standard-library APIs.
+The User project owns composition and lifecycle. Contracts remain independent of Apple JSON. Core does not depend on collection or storage. The deduplicator is retained across connections but only in memory. Recent normalized events and the latest alert are recovered from storage after restart so the detector retains its active window and cooldown. Collection interruption is reported separately from authentication failures.
+
+See [batch parsing](../testing/unified-log-parser.md) and [continuous collection configuration and verification](../testing/continuous-collection.md).
 
 Only supported event patterns should become classified authentication events. Unknown/redacted entries must remain distinguishable. Collection liveness is independent from login failure count. Failed screen-unlock password events were validated by the project owner on macOS 26.2 (ARM64); other authentication paths require separate validation.
 
-Future, **not implemented**: collection, security-event normalization, detection, JSONL persistence, bounded channels, and metrics. Durable event queues, SQLite, OTLP, Grafana, and launchd remain outside this reorganization.
+Future work includes collection health metrics and launchd deployment. Historical backfill, durable event queues, SQLite, OTLP, Grafana, and centralized exporters remain outside the current prototype.

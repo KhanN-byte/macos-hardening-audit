@@ -70,6 +70,16 @@ public sealed class UnifiedLogParser
         new(UnifiedLogParseStatus.BatchFailure, Array.Empty<UnifiedLogEntry>(),
             Array.AsReadOnly(new[] { new UnifiedLogParseDiagnostic(code) }));
 
+    // Shared by batch and live readers after JSON framing has been validated.
+    internal static UnifiedLogParseResult ParseRecord(JsonElement element, int index)
+    {
+        var entries = new List<UnifiedLogEntry>();
+        var diagnostics = new List<UnifiedLogParseDiagnostic>();
+        ReadRecord(element, index, entries, diagnostics);
+        return new(diagnostics.Count == 0 ? UnifiedLogParseStatus.Success : UnifiedLogParseStatus.RecordErrors,
+            entries.AsReadOnly(), diagnostics.AsReadOnly());
+    }
+
     private static bool IsKnown(string name) => name is "timestamp" or "processID" or
         "subsystem" or "category" or "eventMessage" or "processImagePath" or "messageType" or "bootUUID" or "machTimestamp" or "threadID";
 
@@ -114,13 +124,22 @@ public sealed class UnifiedLogParser
         Guid? bootUuid = null;
         if (element.TryGetProperty("bootUUID", out var boot) && boot.ValueKind != JsonValueKind.Null)
         {
-            if (boot.ValueKind != JsonValueKind.String ||
-                !Guid.TryParseExact(boot.GetString(), "D", out var parsedBootUuid))
+            if (boot.ValueKind != JsonValueKind.String)
             {
                 Error(UnifiedLogParseError.InvalidFieldValue, "bootUUID");
                 return;
             }
-            bootUuid = parsedBootUuid;
+
+            var value = boot.GetString();
+            if (!string.IsNullOrEmpty(value))
+            {
+                if (!Guid.TryParseExact(value, "D", out var parsedBootUuid))
+                {
+                    Error(UnifiedLogParseError.InvalidFieldValue, "bootUUID");
+                    return;
+                }
+                bootUuid = parsedBootUuid;
+            }
         }
 
         bool TryReadUInt64(string name, out ulong? value)

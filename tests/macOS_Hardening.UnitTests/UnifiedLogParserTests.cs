@@ -218,6 +218,7 @@ public sealed class UnifiedLogParserTests
 
     [Theory]
     [InlineData("")]
+    [InlineData(",\"bootUUID\":\"\"")]
     [InlineData(",\"bootUUID\":null,\"machTimestamp\":null,\"threadID\":null")]
     public async Task MissingOrNullIdentityFieldsRemainNull(string fields)
     {
